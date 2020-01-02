@@ -1,7 +1,7 @@
 # import necessary packages
 import matplotlib
 
-from modelVGGnet import Model
+from model import Model
 from keras.preprocessing.image import ImageDataGenerator
 from keras.preprocessing.image import img_to_array
 from keras.utils import to_categorical
