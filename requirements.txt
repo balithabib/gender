@@ -1,0 +1,9 @@
+numpy
+opencv-python
+requests
+progressbar
+tensorflow
+keras
+cvlib
+matplotlib
+sklearn
