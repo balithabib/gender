@@ -1,4 +1,5 @@
 # import necessary packages
+import argparse
 
 import cv2
 import cvlib as cv
@@ -6,13 +7,19 @@ import numpy as np
 from keras.models import load_model
 from keras.preprocessing.image import img_to_array
 
+# command line arguments
+arguments = argparse.ArgumentParser()
+arguments.add_argument("-v", "--video", required=True,
+                       help="path to input video")
+args = arguments.parse_args()
+
 model_path = "./model/detection.model"
 
 # load model
 model = load_model(model_path)
 
 # open video
-video = cv2.VideoCapture("./input/test/1 minute video of funny moments.mp4")
+video = cv2.VideoCapture(args.video)
 
 if not video.isOpened():
     print("Could not open video")

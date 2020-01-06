@@ -76,7 +76,7 @@ cv2.waitKey()
 
 # save output
 name = os.path.basename(args.image).split('.')[0]
-cv2.imwrite("output/{}-output.jpg".format(name), image)
+cv2.imwrite("./output/{}-output.jpg".format(name), image)
 
 # release resources
 cv2.destroyAllWindows()

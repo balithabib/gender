@@ -11,7 +11,7 @@ from keras.preprocessing.image import img_to_array
 from keras.utils import to_categorical
 from sklearn.model_selection import train_test_split
 
-from model import Model
+from src.model import Model
 
 matplotlib.use("Agg")
 
