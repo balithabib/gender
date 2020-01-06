@@ -1,15 +1,17 @@
+import argparse
+import glob
+import os
+import random
+
+import cv2
 import matplotlib
-from model import Model
+import numpy as np
 from keras.preprocessing.image import ImageDataGenerator
 from keras.preprocessing.image import img_to_array
 from keras.utils import to_categorical
 from sklearn.model_selection import train_test_split
-import numpy as np
-import argparse
-import random
-import cv2
-import os
-import glob
+
+from model import Model
 
 matplotlib.use("Agg")
 
@@ -17,7 +19,7 @@ matplotlib.use("Agg")
 arguments = argparse.ArgumentParser()
 arguments.add_argument("-d", "--dataset", required=True,
                        help="path to input dataset (i.e., directory of images)")
-arguments.add_argument("-m", "--model", type=str, default="./model/detection_entrained.model",
+arguments.add_argument("-m", "--model", type=str, default="./model/detection_entraixxned.model",
                        help="path to output model")
 
 args = arguments.parse_args()
@@ -29,7 +31,7 @@ dimension_image = (96, 96, 3)
 
 data = []
 labels = []
-
+print(args.dataset)
 # load dataset
 images_paths = [f for f in glob.glob(args.dataset + "/*/*", recursive=True) if not os.path.isdir(f)]
 random.seed(42)

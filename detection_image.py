@@ -1,10 +1,10 @@
 import argparse
+import os
 import random
 
 import cv2
 import cvlib as cv
 import numpy as np
-import os
 from keras.models import load_model
 from keras.preprocessing.image import img_to_array
 
@@ -69,7 +69,7 @@ for index, current_face in enumerate(face):
     cv2.putText(image, label, (start_x, y), cv2.FONT_HERSHEY_SIMPLEX, 0.7, color, 2)
 
 # display output
-cv2.imshow("results", image)
+cv2.imshow("Result", image)
 
 # press any key to close window
 cv2.waitKey()
